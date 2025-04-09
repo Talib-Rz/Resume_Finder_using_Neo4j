@@ -1,0 +1,13 @@
+requests
+neo4j
+python-dotenv
+streamlit
+chromadb
+sentence-transformers
+pymupdf
+nltk
+python-dotenv
+py2neo
+langchain-groq
+langchain_groq
+langchain

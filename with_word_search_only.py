@@ -95,7 +95,7 @@ def add_candidate_to_neo4j(data, resume_text):
 
 # --- Streamlit App ---
 st.set_page_config(page_title="Resume Graph Search", layout="wide")
-st.title("📄 Resume Graph Search with LLM + Neo4j")
+st.title("Resume Graph Search with LLM + Neo4j word similarity")
 
 st.sidebar.header("Upload Resumes")
 uploaded_files = st.sidebar.file_uploader("Upload PDFs", type="pdf", accept_multiple_files=True)
@@ -142,7 +142,7 @@ if skill_query:
         """
         results = graph.run(cypher, skills=skill_query).data()
 
-        st.subheader(f"👤 Candidates matching skills: {', '.join(skill_query)}")
+        st.subheader(f"Candidates matching skills: {', '.join(skill_query)}")
         if results:
             for res in results:
                 st.markdown(f"### {res['name'].title()}")
@@ -166,7 +166,7 @@ Only provide the summary. Do not include explanations or headers.
                     ])
                     summary = summary_response.content.strip()
                 except Exception as e:
-                    summary = f"⚠️ Error generating summary: {e}"
+                    summary = f"Error generating summary: {e}"
 
                 st.write(summary)
         else:
